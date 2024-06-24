@@ -18,7 +18,7 @@
     </div>
     
     <script>
-        // Obtener todos los items
+        // Get all items
         async function getItems() {
             const response = await fetch('http://localhost:3000/items');
             const items = await response.json();
@@ -31,7 +31,7 @@
             });
         }
 
-        // Agregar un nuevo item
+        // Add new item
         async function addItem() {
             const itemName = document.getElementById('item-name').value;
             const response = await fetch('http://localhost:3000/items', {
@@ -43,10 +43,9 @@
             });
             const newItem = await response.json();
             console.log('Item agregado:', newItem);
-            getItems();  // Actualizar la lista de items
+            getItems();  // Update items
         }
 
-        // Inicializar la lista de items al cargar la página
         getItems();
     </script>
 </body>
